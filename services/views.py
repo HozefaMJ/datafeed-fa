@@ -1954,10 +1954,11 @@ def map_and_return_data(request):
                     financial_account_id=row["Financial Account ID"],
                     consultant_name=row["Consultant Name"]
                 )
+                mapped_entry.save()
                 mapped_data.append(mapped_entry)
     
     # Return all entries from MappedFinancialAccountModel as JSON response
-    mapped_data = MappedFinancialAccountModel.objects.filter(pk__in=[entry.pk for entry in mapped_data]).values()
+    mapped_data = MappedFinancialAccountModel.objects.all().values()
     return JsonResponse(list(mapped_data), safe=False)
 
 
