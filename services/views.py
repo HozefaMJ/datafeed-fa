@@ -1904,6 +1904,8 @@ def map_and_return_data(request):
     if api_token != API_TOKEN:
         return JsonResponse({'error': 'Unauthorized'}, status=401)
     
+    MappedFinancialAccountModel.objects.all().delete()
+    
     financial_data = FinancialAccountModel.objects.all()
     excel_data = pd.read_excel('/home/ubuntu/datafeed-fa/services/utils/mapper.xlsx')
     
