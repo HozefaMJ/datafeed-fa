@@ -361,7 +361,10 @@ def process_sftp_file():
             latest_file = file_list[0]  # Get the latest file in the folder
 
             # Specify the local path to save the downloaded file
-            local_file_path = '/Users/dexter/Documents/Workspace/Skybound/Datafeeds/services/' + latest_file
+            # local_file_path = '/Users/dexter/Documents/Workspace/Skybound/Datafeeds/services/' + latest_file
+
+            local_directory = os.environ.get('LOCAL_DIRECTORY_PATH', '/home/ec2-user/downloded-attachments/')
+            local_file_path = os.path.join(local_directory, latest_file)
 
             # Download the latest file
             sftp.get(latest_file, local_file_path)
