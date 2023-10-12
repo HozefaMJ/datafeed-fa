@@ -29,7 +29,7 @@ email_address = 'datafeeds@skyboundwealth.com'
 def quilter(request):
     subject_name = 'Datafeeds_Provider_QUILTER'
     filename = collect_attachments(email_address, subject_name, client_id, client_secret, tenant_id)
-    print(filename)
+    # print(filename)
     # df = pd.read_csv(filename,encoding = "ISO-8859-1")
     df = pd.read_excel('/home/ubuntu/datafeed-fa/files/DataFeeds/Quilter Reg.xlsx')
 
@@ -149,12 +149,12 @@ def quilter(request):
 def quilterLumpsum(request):
     subject_name = 'Datafeeds_Provider_QUILTER_LUMPSUM'
     filename = collect_attachments(email_address, subject_name, client_id, client_secret, tenant_id)
-    print(filename)
+    # print(filename)
     # df = pd.read_csv(filename,encoding = "ISO-8859-1")
-    df = pd.read_csv('/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/Quilter Main Sept 2023.csv',encoding = "ISO-8859-1")
+    df = pd.read_csv('/home/ubuntu/datafeed-fa/files/DataFeeds/Quilter Main Sept 2023.csv',encoding = "ISO-8859-1")
     # df = pd.read_excel('/Users/dexter/Documents/Workspace/Skybound/Clean_Datafeeds/DataDefaults/Quilter LumpSum.xlsx')
 
-    print('COLUMNS::::',df.columns)
+    # print('COLUMNS::::',df.columns)
 
 
     df['ValuationDate'] = df['ValuationDate']
@@ -328,9 +328,10 @@ def quilterLumpsum(request):
 def utmost(request):
     subject_name = 'Datafeeds_Provider_UTMOST'
     filename = collect_attachments(email_address, subject_name, client_id, client_secret, tenant_id)
-    print(filename)
+    # print(filename)
     # df = pd.read_csv(filename,encoding = "ISO-8859-1")
-    df = pd.read_csv('/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/Valuation 40401163_97000257.csv',encoding = "ISO-8859-1")
+    df = pd.read_csv('/home/ubuntu/datafeed-fa/files/DataFeeds/Valuation 40401163_97000257.csv',encoding = "ISO-8859-1")
+    # df = pd.read_csv('/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/Valuation 40401163_97000257.csv',encoding = "ISO-8859-1")
     # df = pd.read_excel('https://skybound-client-app.s3.eu-north-1.amazonaws.com/Utmost+Regulars.xlsx')
     
     df['ValuationDate'] = df['Valuation Date']
@@ -435,9 +436,10 @@ def utmost(request):
 def utmostLumpsum(request):
     subject_name = 'Datafeeds_Provider_UTMOST_LUMPSUM'
     filename = collect_attachments(email_address, subject_name, client_id, client_secret, tenant_id)
-    print(filename)
+    # print(filename)
     # df = pd.read_csv(filename,encoding = "ISO-8859-1")
-    df = pd.read_csv("/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/Valuation GP52024_PF911076.csv",encoding = "ISO-8859-1")
+    df = pd.read_csv("/home/ubuntu/datafeed-fa/files/DataFeeds/Valuation GP52024_PF911076.csv",encoding = "ISO-8859-1")
+    # df = pd.read_csv("/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/Valuation GP52024_PF911076.csv",encoding = "ISO-8859-1")
     # df = pd.read_excel('https://skybound-client-app.s3.eu-north-1.amazonaws.com/Utmost+LumpSum.xlsx')
 
     df['ValuationDate'] = df['Valuation Date']
@@ -586,12 +588,12 @@ def rl360(request):
     
 
     # df_Holdings = pd.read_csv("https://skybound-client-app.s3.eu-north-1.amazonaws.com/DF_420_Holdings.csv",encoding = "ISO-8859-1")
-    df_Holdings = pd.read_csv("/Users/dexter/Desktop/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_Holdings.csv",encoding = "ISO-8859-1")
-    df_CashHoldings = pd.read_csv("/Users/dexter/Desktop/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_CashHoldings.csv",encoding = "ISO-8859-1")
+    df_Holdings = pd.read_csv("/home/ubuntu/datafeed-fa/files/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_Holdings.csv",encoding = "ISO-8859-1")
+    df_CashHoldings = pd.read_csv("/home/ubuntu/datafeed-fa/files/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_CashHoldings.csv",encoding = "ISO-8859-1")
     # df_Policy = pd.read_csv("https://skybound-client-app.s3.eu-north-1.amazonaws.com/DF_420_Policy.csv",encoding = "ISO-8859-1")
-    df_Policy = pd.read_csv("/Users/dexter/Desktop/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_Policy.csv",encoding = "ISO-8859-1")
-    df_PremiumHistory = pd.read_csv("/Users/dexter/Desktop/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_PremHist.csv",encoding = "ISO-8859-1")
-    df_CashTransaction = pd.read_csv("/Users/dexter/Desktop/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_CashTranHist.csv",encoding = "ISO-8859-1")
+    df_Policy = pd.read_csv("/home/ubuntu/datafeed-fa/files/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_Policy.csv",encoding = "ISO-8859-1")
+    df_PremiumHistory = pd.read_csv("/home/ubuntu/datafeed-fa/files/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_PremHist.csv",encoding = "ISO-8859-1")
+    df_CashTransaction = pd.read_csv("/home/ubuntu/datafeed-fa/files/DataFeeds/rl360/DF_FULL_REQ_30_SEP_2023_CashTranHist.csv",encoding = "ISO-8859-1")
 
 
     df_Holdings['ValuationDate'] = df_Holdings['System_Dt']
@@ -1089,9 +1091,9 @@ def fpi(request):
 def hansard(request):
     subject_name = 'Datafeeds_Provider_HANSARD'
     filename = collect_attachments(email_address, subject_name, client_id, client_secret, tenant_id)
-    print(filename)
+    # print(filename)
     # df = pd.read_csv(filename,encoding = "ISO-8859-1")
-    df = pd.read_excel('/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/Hansard.xlsx')
+    df = pd.read_excel('/home/ubuntu/datafeed-fa/files/DataFeeds/Hansard.xlsx')
     # df = pd.read_excel('https://skybound-client-app.s3.eu-north-1.amazonaws.com/Hansard+Lumpsum.xlsx')
 
     df['PolicyNumber'] = df['Policy Number']
@@ -1523,8 +1525,9 @@ def praemium(request):
 def seb(request):
     subject_name = 'Datafeeds_Provider_SEB'
     filename = collect_attachments(email_address, subject_name, client_id, client_secret, tenant_id)
-    print(filename)
+    # print(filename)
     df = pd.read_csv(filename,encoding = "ISO-8859-1")
+    df = pd.read_excel('/home/ubuntu/datafeed-fa/files/DataFeeds/SEB Main Sept 2023.xls')
     # df = pd.read_excel('/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/SEB Main Sept 2023.xls')
 
     df['PolicyNumber'] = df['Policy Number']
