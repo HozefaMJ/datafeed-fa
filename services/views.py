@@ -1921,6 +1921,7 @@ def map_and_return_data(request):
             financial_entry = financial_data.filter(policy_number=policy_number).first()
             
             if financial_entry:
+                print(financial_entry)
                 # Create a new entry in MappedFinancialAccountModel
                 mapped_entry = MappedFinancialAccountModel.objects.create(
                     policy_number=policy_number,
