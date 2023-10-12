@@ -363,7 +363,7 @@ def process_sftp_file():
             # Specify the local path to save the downloaded file
             # local_file_path = '/Users/dexter/Documents/Workspace/Skybound/Datafeeds/services/' + latest_file
 
-            local_directory = os.environ.get('LOCAL_DIRECTORY_PATH', '/')
+            local_directory = os.environ.get('LOCAL_DIRECTORY_PATH', '/home/ubuntu/datafeed-fa/')
             local_file_path = os.path.join(local_directory, latest_file)
 
             # Download the latest file
