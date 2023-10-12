@@ -30,8 +30,8 @@ def quilter(request):
     subject_name = 'Datafeeds_Provider_QUILTER'
     filename = collect_attachments(email_address, subject_name, client_id, client_secret, tenant_id)
     print(filename)
-    # df = pd.read_csv(filename,encoding = "ISO-8859-1")
-    df = pd.read_excel('/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/Quilter Reg.xlsx')
+    df = pd.read_csv(filename,encoding = "ISO-8859-1")
+    # df = pd.read_excel('/Users/dexter/Documents/Workspace/Skybound/Datafeeds/files/DataFeeds/Quilter Reg.xlsx')
 
     df['ValuationDate'] = df['Valuation Date']
     df['BrokerID'] = df[' Agent Number']
