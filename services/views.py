@@ -1905,7 +1905,7 @@ def map_and_return_data(request):
         return JsonResponse({'error': 'Unauthorized'}, status=401)
     
     financial_data = FinancialAccountModel.objects.all()
-    excel_data = pd.read_excel('/Users/dexter/Documents/Workspace/Skybound/Datafeeds/services/utils/mapper.xlsx')
+    excel_data = pd.read_excel('/home/ubuntu/datafeed-fa/services/utils/mapper.xlsx')
     
     mapped_data = []
 
