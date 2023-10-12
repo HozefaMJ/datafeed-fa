@@ -336,7 +336,7 @@ def utmost(request):
     
     df['ValuationDate'] = df['Valuation Date']
     df['BrokerID'] = df[' Agent Number']
-    df['PolicyNumber'] = '000'+df[' Product Number'].astype(str)
+    df['PolicyNumber'] = df[' Product Number']
     df['Product'] = df[' Product Name']
     df['PolicyCurrency'] = df[' Plan Currency']
     df['HoldingName'] = df[' Fund Name']
